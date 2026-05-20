@@ -1,0 +1,25 @@
+Airalo Auto Sync Added
+
+✅ Latest packages fetch honge
+✅ New packages auto available
+✅ Removed/discontinued packages auto unavailable
+✅ Website/app active packages use karegi
+✅ Admin latest availability use karega
+✅ QR sirf active packages par generate hoga
+
+Setup:
+1. Import backend_original/backend/airalo_db.sql in MySQL.
+2. Set DB details in backend_original/backend/db.php.
+3. Set Airalo Client ID/Secret in backend_original/backend/airalo_config.php.
+4. Test:
+   https://yourdomain.com/backend_original/backend/airalo_sync_packages.php
+
+EasyHost Cron:
+php -q /home/YOUR_USER/www/backend_original/backend/airalo_sync_packages.php
+
+Schedule:
+0 * * * *
+
+QR guard:
+Before QR/order generation call:
+backend_original/backend/airalo_validate_active.php?package_id=PACKAGE_ID
